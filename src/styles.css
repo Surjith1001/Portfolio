@@ -14,17 +14,17 @@ header, footer {
 
 /* Navbar Styles */
 .navbar {
-  background-color: #ffffff; /* Background color for the navbar */
-  padding: 15px 0; /* Padding on the top and bottom */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for a clean effect */
-  position: sticky; /* Navbar stays at the top when scrolling */
+  background-color: #ffffff;
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
   top: 0;
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 1000;
 }
 
 .navbar .container {
   display: flex;
-  justify-content: space-between; /* Space between the brand/logo and the menu */
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -34,42 +34,42 @@ header, footer {
 }
 
 .navbar-logo {
-  width: 70px; /* Set width of the logo */
-  height: 70px; /* Set height of the logo */
-  border-radius: 50%; /* Make the image round */
-  object-fit: cover; /* Ensure the image covers the space */
-  border: 2px solid #007bff; /* Optional: Add a border for a polished look */
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff;
 }
 
 .navbar ul {
-  list-style-type: none; /* Remove bullets */
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Flexbox for horizontal alignment */
-  gap: 20px; /* Spacing between links */
+  display: flex;
+  gap: 20px;
 }
 
 .navbar li {
-  display: inline-block; /* Inline block for list items */
+  display: inline-block;
 }
 
 .navbar a {
-  color: #333; /* Text color */
-  text-decoration: none; /* Remove underline */
-  font-size: 1.1em; /* Increase font size slightly */
-  padding: 10px 15px; /* Padding around the links */
-  transition: color 0.3s, background-color 0.3s; /* Smooth transition for hover effects */
+  color: #333;
+  text-decoration: none;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .navbar a:hover {
-  color: #ffffff; /* Text color on hover */
-  background-color: #007bff; /* Background color on hover */
-  border-radius: 5px; /* Rounded corners for hover effect */
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 5px;
 }
 
 /* Mobile Menu Toggle */
 .navbar-toggle {
-  display: none; /* Hidden by default */
+  display: none;
   font-size: 1.5em;
   background-color: #007bff;
   color: white;
@@ -77,24 +77,35 @@ header, footer {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Toggle Animation */
+.navbar-toggle.active {
+  transform: rotate(90deg);
+  background-color: #0056b3;
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar ul {
-      flex-direction: column; /* Stack items vertically */
-      display: none; /* Hide menu initially */
+      flex-direction: column;
+      display: none;
       width: 100%;
       text-align: center;
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+      max-height: 0;
   }
 
   .navbar ul.active {
-      display: flex; /* Show menu when active */
+      display: flex;
+      max-height: 500px; /* Adjust as necessary */
   }
 
   .navbar-toggle {
-      display: block; /* Show toggle button */
-      margin-left: auto; /* Push it to the right */
+      display: block;
+      margin-left: auto;
   }
 }
 
@@ -577,6 +588,140 @@ footer p {
 
   .footer p {
       font-size: 0.9em;
+  }
+}
+
+/* Mobile Styles - Up to 768px */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .home-page h1 {
+    font-size: 2em;
+  }
+
+  .home-page img {
+    width: 150px;
+  }
+
+  .home-page .cta-buttons a {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .about-page, .research-page, .achievements-page, .contact-container {
+    padding: 20px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button-group a {
+    margin: 0.5rem 0;
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .services {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .service {
+    margin: 1rem 0;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet Styles - Between 768px and 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-page h1 {
+    font-size: 2.5em;
+  }
+
+  .home-page img {
+    width: 180px;
+  }
+
+  .home-page .cta-buttons a {
+    font-size: 1.1em;
+  }
+
+  .about-page, .research-page, .achievements-page, .contact-container {
+    padding: 30px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    padding: 1.5rem;
+  }
+
+  .hero img {
+    max-width: 300px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .button-group a {
+    padding: 0.7rem 1.8rem;
+    font-size: 1.1rem;
+  }
+
+  .services {
+    margin-top: 2.5rem;
+  }
+
+  .footer {
+    font-size: 1rem;
   }
 }
 
